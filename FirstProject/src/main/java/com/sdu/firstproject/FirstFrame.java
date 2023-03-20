@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class FirstFrame extends javax.swing.JFrame {
 
-    private int i;
+    
     
     public FirstFrame() {
         
@@ -20,7 +20,7 @@ public class FirstFrame extends javax.swing.JFrame {
         //lbl_1.setText("Merhaba Dünya");
         //lbl_1.setOpaque(true);
         //lbl_1.setBackground(Color.red);
-        i=0;
+        
     }
     //constructor
 
@@ -32,7 +32,7 @@ public class FirstFrame extends javax.swing.JFrame {
         btn_1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("First Frame");
+        setTitle("Click The Button");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         btn_1.setText("Tıkla");
