@@ -3,6 +3,8 @@ package com.sdu.firstproject;
 
 import java.util.Locale;
 import java.util.Random;
+import javax.swing.JOptionPane;
+
 
 
 public class FirstFrame extends javax.swing.JFrame {
@@ -31,11 +33,10 @@ public class FirstFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("First Frame");
-        setAlwaysOnTop(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMinimumSize(new java.awt.Dimension(2147483647, 2147483647));
 
         btn_1.setText("Tıkla");
+        btn_1.setDisplayedMnemonicIndex(1);
         btn_1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 btn_1MouseMoved(evt);
@@ -67,41 +68,24 @@ public class FirstFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_1ActionPerformed
-        //JOptionPane(null,"Butona Tıkladınız");
-        //ilk parametre pencere yerini, ikincisi mesjı veririr.
-        
-        //lbl_message.setText("Merhaba Arkadaş");
-        //label a butona tıklanınca mesajı yazdırır
-        
-        /*
-        if (i ==0 ){
-            lbl_message.setText("Mesajınız budur");
-            i++;
-        }
-        else{
-             lbl_message.setText("Veya budur");
-             i=0;
-        }
-        //Butona tıklandıkça mesjalar sırasıyla ilk değerine dönerek labelda gözükür.
-       */
-        
-        JOptionPane(null, "Kazandın!");
-        
-        
-        
-        
-    }//GEN-LAST:event_btn_1ActionPerformed
-
+     
     private void btn_1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_1MouseMoved
-        int width= this.getWidth(); //frame genişliği
-        int height= this.getHeight(); //frame yüksekliği
+        int width= this.getWidth(); //genişliği
+        int height= this.getHeight(); //yüksekliği
+        int btn_weight= btn_1.getWidth();
+        int btn_height= btn_1.getHeight();
+        int width_frame=width-btn_weight;
+        int height_frame=height-btn_height;
         //buton hight ve weightleri alındı
         Random rnd= new Random();
         //random sınıfı oluşturuldu
-        btn_1.setLocation(rnd.nextInt(width),rnd.nextInt(height));
-        //buton üzerine geldikçe height ve width değişti
+        btn_1.setLocation(rnd.nextInt(width_frame),rnd.nextInt(height_frame));
+        //bir nesnenin frame üzerindeki konumunu belirleme -> setLocation
     }//GEN-LAST:event_btn_1MouseMoved
+
+    private void btn_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_1ActionPerformed
+        JOptionPane.showMessageDialog(null, "Kazandınız!");
+    }//GEN-LAST:event_btn_1ActionPerformed
 
     
     public static void main(String args[]) {
